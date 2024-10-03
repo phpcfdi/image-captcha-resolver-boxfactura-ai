@@ -53,7 +53,7 @@ bin/download-model storage/sat-captcha-ai-model
 ### Resolver un captcha con `phpcfdi/image-captcha-resolver`
 
 Para este ejemplo se asume que la imagen del captcha se encuentra como imagen embedida y su contenido en `$theImgElementSrcAtributte`.
-Tambien asume que el archivo de configuraciones del modelo está en `storage/sat-captcha-ai-model/configs.yaml`.
+También asume que el archivo de configuraciones del modelo está en `storage/sat-captcha-ai-model/configs.yaml`.
 
 ```php
 <?php
