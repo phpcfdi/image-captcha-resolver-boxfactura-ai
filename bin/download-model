@@ -1,0 +1,57 @@
+#!/usr/bin/env bash
+
+function print_help {
+    local command="$(basename "$0")"
+    cat << EOM
+${command} - Get model files and put into a directory
+Syntax:
+    ${command} [help|--help|-h]
+    ${command} <destination>
+Arguments:
+    <destination> Directory where files will be placed.
+                  If it does not exists then it will be created.
+Source:
+    Files are taken from https://github.com/BoxFactura/sat-captcha-ai-model
+    - model/model.onnx
+    - model/model.h5
+    - model/configs.yaml
+About:
+    This file belongs to the project https://github.com/phpcfdi/image-captcha-resolver-boxfactura-ai
+    Copyright and license from as the source project.
+
+EOM
+}
+
+function print_stderr {
+    echo "${@}" 1>&2
+}
+
+
+for arg in "${@}"; do
+    if [ "$arg" == "help" -o "$arg" == "--help" -o "$arg" == "-h" ]; then
+        print_help
+        exit 0
+    fi
+done
+
+if [ -z "$1" ]; then
+    print_stderr "Destination directory is missing"
+    exit 1
+fi
+
+mkdir -p "$1"
+if [ $? -ne 0 ]; then
+    print_stderr "Unable to create directory $1"
+    exit 1
+fi
+
+FILES=(model.onnx configs.yaml)
+for file in "${FILES[@]}"; do
+    filesource="https://raw.githubusercontent.com/BoxFactura/sat-captcha-ai-model/refs/heads/master/model/$file"
+    curl -s -o "$1/$file" "$filesource"
+    if [ $? -ne 0 ]; then
+        print_stderr "Unable to download $filesource to $1/$file"
+        exit 1
+    fi
+done
+

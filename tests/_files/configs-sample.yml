@@ -1,0 +1,4 @@
+width: "100"
+height: 50
+model_path: "x-model"
+vocab: "FOOBAR"
