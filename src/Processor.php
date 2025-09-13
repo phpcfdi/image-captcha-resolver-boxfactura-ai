@@ -22,7 +22,7 @@ final class Processor
         public readonly int $imageHeight,
         public readonly array $alphabet,
         public readonly InferenceSession $session,
-        public readonly ImagineInterface $imagine
+        public readonly ImagineInterface $imagine,
     ) {
     }
 
@@ -33,7 +33,7 @@ final class Processor
             $settings->imageHeight,
             $settings->alphabetArray,
             new InferenceSession($settings->onnxModel),
-            new Imagine()
+            new Imagine(),
         );
     }
 

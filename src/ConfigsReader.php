@@ -17,7 +17,7 @@ final class ConfigsReader
         } catch (Throwable $exception) {
             throw new RuntimeException(
                 sprintf('Unable to parse BoxFactura AI model config file from %s', $configsFile),
-                previous: $exception
+                previous: $exception,
             );
         }
 
