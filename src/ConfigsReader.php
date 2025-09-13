@@ -10,6 +10,7 @@ use Throwable;
 
 final class ConfigsReader
 {
+    /** @throws RuntimeException When unable to parse BoxFactura AI model config file. */
     public function settingsFromFile(string $configsFile): Settings
     {
         try {
