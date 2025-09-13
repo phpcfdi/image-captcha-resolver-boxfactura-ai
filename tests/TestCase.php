@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace PhpCfdi\ImageCaptchaResolver\BoxFacturaAI\Tests;
 
-use RuntimeException;
-
 abstract class TestCase extends \PHPUnit\Framework\TestCase
 {
     public static function filePath(string $filename): string
