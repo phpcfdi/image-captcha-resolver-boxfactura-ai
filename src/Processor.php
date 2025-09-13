@@ -124,7 +124,6 @@ final class Processor
      * The usage of max and array_search on floats can be buggy.
      *
      * @param list<float> $values
-     * @return int
      */
     private function maxIndex(array $values): int
     {
