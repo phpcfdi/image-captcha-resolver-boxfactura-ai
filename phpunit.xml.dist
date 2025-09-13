@@ -1,17 +1,11 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
-    cacheDirectory="build/phpunit.cache"
-    colors="true"
+    cacheDirectory="build/phpunit"
     bootstrap="tests/bootstrap.php"
     defaultTestSuite="default"
-    displayDetailsOnIncompleteTests="true"
-    displayDetailsOnSkippedTests="true"
-    displayDetailsOnTestsThatTriggerDeprecations="true"
-    displayDetailsOnPhpunitDeprecations="true"
-    displayDetailsOnTestsThatTriggerErrors="true"
-    displayDetailsOnTestsThatTriggerNotices="true"
-    displayDetailsOnTestsThatTriggerWarnings="true"
+    colors="true"
+    displayDetailsOnAllIssues="true"
     >
     <testsuites>
         <testsuite name="default">
