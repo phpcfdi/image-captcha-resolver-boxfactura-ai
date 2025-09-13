@@ -54,8 +54,9 @@ final class Processor
     public function resolveImage(ImageInterface $image): string
     {
         $input = $this->imageToPixelsShape($image);
+        /** @phpstan-var list<array<array<list<float>>>> $output */
         $output = $this->session->run(null, ['input' => [$input]]);
-        return $this->logitsToText($output[0]);
+        return $this->logitsToText($output[0] ?? []);
     }
 
     /**
@@ -108,8 +109,8 @@ final class Processor
 
     /**
      * @see https://en.wikipedia.org/wiki/Softmax_function
-     * @param float[] $values
-     * @return float[]
+     * @param list<float> $values
+     * @return list<float>
      */
     private function softmax(array $values): array
     {
