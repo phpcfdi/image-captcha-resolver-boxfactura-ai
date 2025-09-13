@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace PhpCfdi\ImageCaptchaResolver\BoxFacturaAI\Tests;
 
-use RuntimeException;
-
 abstract class TestCase extends \PHPUnit\Framework\TestCase
 {
     public static function filePath(string $filename): string
@@ -15,17 +13,7 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
 
     public static function fileContents(string $filename): string
     {
-        return file_get_contents(static::filePath($filename)) ?: '';
-    }
-
-    public function checkPortIsOpen(string $hostname, int $port, float $timeoutSeconds = null): void
-    {
-        $timeoutSeconds = $timeoutSeconds ?? intval(ini_get('default_socket_timeout'));
-        $socket = fsockopen($hostname, $port, $errorNumber, $errorMessage, $timeoutSeconds);
-        if (false === $socket) {
-            throw new RuntimeException($errorMessage, $errorNumber);
-        }
-        fclose($socket);
+        return (string) file_get_contents(static::filePath($filename));
     }
 
     public function getenv(string $variableName, string $default = ''): string

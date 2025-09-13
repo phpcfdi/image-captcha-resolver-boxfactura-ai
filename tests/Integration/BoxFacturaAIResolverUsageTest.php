@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace PhpCfdi\ImageCaptchaResolver\BoxFacturaAI\Tests\Integration;
 
 use PhpCfdi\ImageCaptchaResolver\BoxFacturaAI\BoxFacturaAIResolver;
+use PhpCfdi\ImageCaptchaResolver\BoxFacturaAI\Tests\TestCase;
 use PhpCfdi\ImageCaptchaResolver\CaptchaAnswer;
 use PhpCfdi\ImageCaptchaResolver\CaptchaImage;
-use PhpCfdi\ImageCaptchaResolver\BoxFacturaAI\Tests\TestCase;
 use PhpCfdi\ImageCaptchaResolver\UnableToResolveCaptchaException;
 
 final class BoxFacturaAIResolverUsageTest extends TestCase

@@ -7,6 +7,7 @@ namespace PhpCfdi\ImageCaptchaResolver\BoxFacturaAI\Tests\Unit;
 use LogicException;
 use PhpCfdi\ImageCaptchaResolver\BoxFacturaAI\Settings;
 use PhpCfdi\ImageCaptchaResolver\BoxFacturaAI\Tests\TestCase;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 final class SettingsTest extends TestCase
 {
@@ -23,10 +24,8 @@ final class SettingsTest extends TestCase
         ];
     }
 
-    /**
-     * @param array{array<string, int|string>} $values
-     * @dataProvider providerCreateSettingsWithInvalidValue
-     */
+    /** @param array{array<string, int|string>} $values */
+    #[DataProvider('providerCreateSettingsWithInvalidValue')]
     public function testCreateSettingsWithInvalidValue(array $values): void
     {
         $values = $values + [

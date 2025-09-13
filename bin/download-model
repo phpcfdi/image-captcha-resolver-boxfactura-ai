@@ -13,7 +13,6 @@ Arguments:
 Source:
     Files are taken from https://github.com/BoxFactura/sat-captcha-ai-model
     - model/model.onnx
-    - model/model.h5
     - model/configs.yaml
 About:
     This file belongs to the project https://github.com/phpcfdi/image-captcha-resolver-boxfactura-ai
